@@ -2,6 +2,10 @@
     background-color: black;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .hero {
     position: relative;
     overflow: hidden;
@@ -40,12 +44,10 @@
     color: aliceblue;
 }
 
-/* Efecto máquina de escribir */
+
 .typing {
     overflow: hidden;
-    /* Oculta el texto mientras se escribe */
     border-right: 3px solid aliceblue;
-    /* Cursor */
     white-space: nowrap;
     animation: typing 3s steps(20) forwards, blink-caret 0.75s step-end infinite;
 }
@@ -72,13 +74,11 @@
     }
 }
 
-/* Fade-in para el subtítulo */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 2s ease forwards;
     animation-delay: 3s;
-    /* Espera a que termine el typing */
 }
 
 @keyframes fadeIn {
@@ -109,5 +109,6 @@
     opacity: 1;
 }
 
-#projects,
-#contact {}
+body {
+    padding-top: 50px;
+}
