@@ -1,179 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Documentation Page</title>
-    <link rel="stylesheet" href="documentationpage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Mantener la barra lateral fija y scrollable */
+        #navbar {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            padding-top: 1rem;
+            background-color: #f8f9fa;
+        }
+
+        #main-doc {
+            scroll-behavior: smooth;
+        }
+
+        /* Resaltar links activos cuando haces scroll */
+        .nav-link {
+            margin-bottom: 0.5rem;
+        }
+
+        code {
+            display: block;
+            background-color: #e9ecef;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
+        }
+    </style>
 </head>
+
 <body>
-    <nav id="navbar">
-        <header>CSS Documentation</header>
-        <hr><hr>
-        <a class="nav-link" href="#What_is_CSS?">What is CSS?</a>
-        <hr><hr>
-        <a class="nav-link" href="#Anatomy">Anatomy</a>
-        <hr><hr>
-        <a class="nav-link" href="#Fonts_and_text">Fonts and text</a>
-        <hr><hr>
-        <a class="nav-link" href="#CSS:_all_about_boxes">CSS: all about boxes</a>
-        <hr><hr>
-        <a class="nav-link" href="#Styling_the_body">Styling the body</a>
-    </nav>
-    <main id="main-doc">
-        <section id="What_is_CSS?" class="main-section">
-            <header>What is CSS?</header>
-            <p>CSS (Cascading Style Sheets) is the code that styles web content. CSS basics walks through what 
-                you need to get started. We'll answer questions like: How do I make text red? 
-                How do I make content display at a certain location in the (webpage) 
-                layout? How do I decorate my webpage with background images and colors?</p>
-            <p>Like HTML, CSS is not a programming language. It's not a markup language either. CSS is a style sheet language. CSS is what you use to selectively style HTML elements. 
-                For example, this CSS selects paragraph text, setting the color to red:</p>
-            <code>p {
-                color: red;
-              }</code>
-            <ul>
-                <li>To make the code work, we still need to apply this CSS (above) to your HTML document. Otherwise, the styling won't change the appearance of the HTML.</li>
-            </ul>
-        </section>
-        <section id="Anatomy" class="main-section">
-            <header>Anatomy</header>
-            <p>The whole structure is called a ruleset. (The term ruleset is often referred to as just rule.) Note the names of the individual parts:</p>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Navbar lateral -->
+            <nav id="navbar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky">
+                    <h5 class="px-3">CSS Documentation</h5>
+                    <hr>
+                    <div class="nav flex-column px-3">
+                        <a class="nav-link" href="#What_is_CSS?">What is CSS?</a>
+                        <a class="nav-link" href="#Anatomy">Anatomy</a>
+                        <a class="nav-link" href="#Fonts_and_text">Fonts and text</a>
+                        <a class="nav-link" href="#CSS:_all_about_boxes">CSS: all about boxes</a>
+                        <a class="nav-link" href="#Styling_the_body">Styling the body</a>
+                    </div>
+                </div>
+            </nav>
 
-            <ul>
-                <li>Selector: This is the HTML element name at the start of the ruleset. It defines the element(s) to be styled (in this example, <code> p </code> elements). To style a different element, change the selector.</li>
-               
-               
-                <li> Declaration:
-                    This is a single rule like color: red;. It specifies which of the element's properties you want to style.</li>
-               <li> Properties:
-                These are ways in which you can style an HTML element. (In this example, color is a property of the p elements.) In CSS, you choose which properties you want to affect in the rule.
-                <br></li>
-                <li>Property value:
-                    To the right of the property—after the colon—there is the property value. This chooses one out of many possible appearances for a given property. (For example, there are many color values in addition to red.)</li>
-                </ul>
-            <p>To modify multiple property values in one ruleset, write them separated by semicolons, like this:</p><code>
-                p {
-                color: red;
-                width: 500px;
-                border: 1px solid black;
-              }
-            </code>
-            <p>Note the other important parts of the syntax:</p>
-            <ul>
-                <li>Apart from the selector, each ruleset must be wrapped in curly braces. ({})</li>
-                <li>Within each declaration, you must use a colon (:) to separate the property from its value or values.</li>
-                <li>Within each ruleset, you must use a semicolon (;) to separate each declaration from the next one.</li>
-            </ul>
-        </section>
-        <section id="Fonts_and_text" class="main-section">
-            <header>Fonts and text</header>
-            <p>First, find the output from Google Fonts that you previously saved from What will your website look like?. Add the "link" element somewhere inside your index.html's head (anywhere between the "head" and "head" tags). It looks something like this:
-                <br><code>
-                    `link
-                    href="https://fonts.googleapis.com/css?family=Open+Sans"
-                          rel="stylesheet" />`
-                </code>
-            </p>
-            <p>
-                Next, delete the existing rule you have in your style.css file. 
-            </p><br>
-            <p> Add the following lines (shown below), replacing the font-family assignment with your font-family selection from What will your website look like?. The property font-family refers to the font(s) you want to use for text. This rule defines a global base font and font size for the whole page. Since "html" is the parent element of the whole page, all elements inside it inherit the same font-size and font-family.
-                <br><code>
-                    html {
-                        font-size: 10px; /* px means "pixels": the base font size is now 10 pixels high */
-                        font-family: "Open Sans", sans-serif; /* this should be the rest of the output you got from Google Fonts */
-                      }
-                </code>
-            </p>
-            <p> Now let's set font sizes for elements that will have text inside the HTML body ("h1", "li", and "p"). We'll also center the heading. Finally, let's expand the second ruleset (below) with settings for line height and letter spacing to make body content more readable.
-                <code>
-                    h1 {
-                        font-size: 60px;
-                        text-align: center;
-                      }
-                      
-                      
-                </code>
-            </p>
-            <code>p,
-                li {
-                  font-size: 16px;
-                  line-height: 2;
-                  letter-spacing: 1px;
-                }</code>
-            <ul>
-                <li>
-                    Adjust the px values as you like
-                </li>
-            </ul>
-        </section>
-        <section id="CSS:_all_about_boxes" class="main-section">
-            <header>CSS: all about boxes</header>
-            <p>Something you'll notice about writing CSS: a lot of it is about boxes. This includes setting size, color, and position. Most HTML elements on your page can be thought of as boxes sitting on top of other boxes.</p>
-            <p>CSS layout is mostly based on the box model. Each box taking up space on your page has properties like:</p>
-            
-            <ul>
-                <li>padding, the space around the content. In the example below, it is the space around the paragraph text.</li>
-            </ul>
-            <ul>
-                <li>border, the solid line that is just outside the padding.</li>
-            </ul>
-            <ul>
-                <li>margin, the space around the outside of the border.</li>
-            </ul>
-            <ul>
-                <li>width (of an element).</li>
-            </ul>
-            <ul>
-                <li>background-color, the color behind an element's content and padding.</li>
-            </ul>
-            <ul>
-                <li>color, the color of an element's content (usually text).</li>
-            </ul>
-            <ul>
-                <li>text-shadow sets a drop shadow on the text inside an element.</li>
-            </ul>
-            <ul>
-                <li>display sets the display mode of an element. </li>
-            </ul>
+            <!-- Contenido principal -->
+            <main id="main-doc" class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                <section id="What_is_CSS?" class="mb-5">
+                    <h2>What is CSS?</h2>
+                    <p>CSS (Cascading Style Sheets) is the code that styles web content. CSS basics walks through what
+                        you need to get started. We'll answer questions like: How do I make text red?
+                        How do I make content display at a certain location in the layout? How do I decorate my webpage
+                        with background images and colors?</p>
+                    <p>Like HTML, CSS is not a programming language. It's a style sheet language. For example:</p>
+                    <code>p { color: red; }</code>
+                </section>
 
-            <p>To continue, let's add more CSS. Keep adding these new rules at the bottom of style.css. Experiment with changing values to see what happens.</p>
-            <code>html {
-                background-color: #00539f;
-              }</code>
-              <p>This rule sets a background color for the entire page.</p>
-        </section>
-        <section id="Styling_the_body" class="main-section">
-            <header>Styling the body</header>
-            <p>There are several declarations for the "body" element. </p>
-            <p></p>
-           
-            <ul>
-                <li>width: 600px; This forces the body to always be 600 pixels wide.</li>
-            </ul>
-            <ul>
-                <li>margin: 0 auto; When you set two values on a property like margin or padding, the first value affects the element's top and bottom side (setting it to 0 in this case); the second value affects the left and right side. (Here, auto is a special value that divides the available horizontal space evenly between left and right).</li>
-            </ul>
-            <ul>
-                <li>background-color: #FF9500; This sets the element's background color. This project uses a reddish orange for the body background color, as opposed to dark blue for the "html" element.</li>
-            </ul>
-            <ul>
-                <li>padding: 0 20px 20px 20px; This sets four values for padding. The goal is to put some space around the content. In this example, there is no padding on the top of the body, and 20 pixels on the right, bottom and left. The values set top, right, bottom, left, in that order. </li>
-            </ul>
-            <ul>
-                <li>border: 5px solid black; This sets values for the width, style and color of the border. In this case, it's a five-pixel–wide, solid black border, on all sides of the body</li>
-            </ul>
-            <code>body {
-                width: 600px;
-                margin: 0 auto;
-                background-color: #ff9500;
-                padding: 0 20px 20px 20px;
-                border: 5px solid black;
-              }</code>
-        </section>
-    </main>
+                <section id="Anatomy" class="mb-5">
+                    <h2>Anatomy</h2>
+                    <p>The whole structure is called a ruleset. Note the names of the individual parts:</p>
+                    <ul>
+                        <li><strong>Selector:</strong> The HTML element name at the start of the ruleset. E.g.,
+                            <code>p</code>.
+                        </li>
+                        <li><strong>Declaration:</strong> A rule like <code>color: red;</code>.</li>
+                        <li><strong>Properties:</strong> Ways to style the element.</li>
+                        <li><strong>Property value:</strong> The value of the property (e.g., red).</li>
+                    </ul>
+                    <p>Example:</p>
+                    <code>
+p {<br>
+&nbsp;&nbsp;color: red;<br>
+&nbsp;&nbsp;width: 500px;<br>
+&nbsp;&nbsp;border: 1px solid black;<br>
+}
+          </code>
+                </section>
+
+                <section id="Fonts_and_text" class="mb-5">
+                    <h2>Fonts and text</h2>
+                    <p>Add Google Fonts to your <code>&lt;head&gt;</code>:</p>
+                    <code>&lt;link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"&gt;</code>
+                    <p>Set global font-size and font-family:</p>
+                    <code>
+html {<br>
+&nbsp;&nbsp;font-size: 10px;<br>
+&nbsp;&nbsp;font-family: "Open Sans", sans-serif;<br>
+}
+          </code>
+                    <p>Set heading and text styles:</p>
+                    <code>
+h1 { font-size: 60px; text-align: center; }<br>
+p, li { font-size: 16px; line-height: 2; letter-spacing: 1px; }
+          </code>
+                </section>
+
+                <section id="CSS:_all_about_boxes" class="mb-5">
+                    <h2>CSS: all about boxes</h2>
+                    <p>CSS layout is based on the box model. Properties include:</p>
+                    <ul>
+                        <li>padding, border, margin, width, background-color, color, text-shadow, display</li>
+                    </ul>
+                    <p>Example:</p>
+                    <code>html { background-color: #00539f; }</code>
+                </section>
+
+                <section id="Styling_the_body" class="mb-5">
+                    <h2>Styling the body</h2>
+                    <p>Example CSS:</p>
+                    <code>
+body {<br>
+&nbsp;&nbsp;width: 600px;<br>
+&nbsp;&nbsp;margin: 0 auto;<br>
+&nbsp;&nbsp;background-color: #ff9500;<br>
+&nbsp;&nbsp;padding: 0 20px 20px 20px;<br>
+&nbsp;&nbsp;border: 5px solid black;<br>
+}
+          </code>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
 
- 
+</html>
