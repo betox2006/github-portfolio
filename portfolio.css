@@ -1,3 +1,8 @@
+body {
+    padding-top: 50px;
+}
+
+
 .hero {
     background-color: black;
 }
@@ -94,8 +99,9 @@ html {
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: transform .3s;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 
 .tech-tags .badge {
@@ -107,8 +113,4 @@ html {
 
 .tech-tags .badge:hover {
     opacity: 1;
-}
-
-body {
-    padding-top: 50px;
 }
