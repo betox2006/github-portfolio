@@ -33,7 +33,7 @@
         <section class="hero text-center py-5" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; 
                 align-items: center; padding: 5rem 0; position: relative; overflow: hidden;">
 
-            <img src="background2.jpg"
+            <img src="img/background2.jpg"
                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(8px); z-index: 1;">
 
             <div class="hero-overlay"></div>
@@ -47,7 +47,7 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card h-100 project-card">
-                        <img src="Tribute Page img.PNG" class="card-img-top" alt="Tribute Page">
+                        <img src="img/tribute-page.png" class="card-img-top" alt="Tribute Page">
                         <div class="card-body">
                             <h5 class="card-title">Tribute Page</h5>
                             <p class="card-text">A simple tribute page built with HTML and CSS. Learned semantic HTML
@@ -56,14 +56,14 @@
                                 <span class="badge bg-primary">HTML</span>
                                 <span class="badge bg-success">CSS</span>
                             </div>
-                            <a href="./proyectos/tribute-page/index.html" target="_blank"
-                                class="btn btn-outline-primary">View Project</a>
+                            <a href="./proyectos/tribute-page/index.html" target="" class="btn btn-outline-primary">View
+                                Project</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card h-100 project-card">
-                        <img src="Product Landing Page img.PNG" class="card-img-top" alt="Product Landing Page">
+                        <img src="img/land-page.png" class="card-img-top" alt="Product Landing Page">
                         <div class="card-body">
                             <h5 class="card-title">Product Landing Page</h5>
                             <p class="card-text">Responsive landing page with modern layout.</p>
@@ -71,14 +71,14 @@
                                 <span class="badge bg-primary">HTML</span>
                                 <span class="badge bg-success">CSS</span>
                             </div>
-                            <a href="./proyectos/landing-page/index.html" target="_blank"
-                                class="btn btn-outline-primary">View Project</a>
+                            <a href="./proyectos/landing-page/index.html" target="" class="btn btn-outline-primary">View
+                                Project</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="card h-100 project-card">
-                        <img src="Documentation Page img.PNG" class="card-img-top" alt="Documentation Page">
+                        <img src="img/doc-page.png" class="card-img-top" alt="Documentation Page">
                         <div class="card-body">
                             <h5 class="card-title">Documentation Page</h5>
                             <p class="card-text">Technical documentation layout. Practiced layout hierarchy and
@@ -87,32 +87,53 @@
                                 <span class="badge bg-primary">HTML</span>
                                 <span class="badge bg-success">CSS</span>
                             </div>
-                            <a href="./proyectos/doc-page/index.html" target="_blank"
-                                class="btn btn-outline-primary">View Project</a>
+                            <a href="./proyectos/doc-page/index.html" target="" class="btn btn-outline-primary">View
+                                Project</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="container py-5" id="contact">
-            <h2 class="text-center mb-4">Contact Me</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Your Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="">
+        <div class="modal fade" id="contactModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Contact Me</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Your Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Email address</label>
+                                <input type="email" class="form-control" placeholder="name@example.com">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Your Message</label>
+                                <textarea class="form-control" rows="4" style="resize: none;"
+                                    placeholder="Write your message..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-dark w-100">Send Message</button>
+                        </form>
+                    </div>
+
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Your Message</label>
-                    <textarea class="form-control" id="message" rows="4" style="resize: none;"
-                        placeholder="Write your message..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-dark w-100">Send Message</button>
-            </form>
-        </section>
+            </div>
+        </div>
+
+        <div id="contact" class="text-center py-4">
+            <button class="btn btn-dark rounded-5" data-bs-toggle="modal" data-bs-target="#contactModal">
+                Contact Me
+            </button>
+        </div>
+
     </main>
     <footer class="bg-dark text-white py-4 bg-dark text-white text-center py-4 mt-auto">
         <div class="container text-center">
